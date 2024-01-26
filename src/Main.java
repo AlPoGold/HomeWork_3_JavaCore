@@ -70,5 +70,11 @@ public class Main {
         System.out.println(branch2);
         branch2.sortByAge();
         System.out.println(branch2);
+
+        System.out.println(branch1);
+        branch1.sortBySalary();
+        System.out.println(branch1);
+
+
     }
 }

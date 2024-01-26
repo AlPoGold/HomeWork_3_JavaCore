@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class ComparatorEmpLastName implements Comparator<Employee> {
+public class ComparatorEmpName implements Comparator<Employee> {
     @Override
     public int compare(Employee o1, Employee o2) {
         if(!o1.getLastName().equals(o2.getLastName())){

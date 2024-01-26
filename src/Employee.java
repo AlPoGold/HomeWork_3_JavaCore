@@ -1,8 +1,9 @@
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
@@ -31,6 +32,19 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.position = position;
         this.salary = salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Double.compare(employee.salary, salary) == 0 && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(birthDate, employee.birthDate) && Objects.equals(phoneNumber, employee.phoneNumber) && Objects.equals(position, employee.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, birthDate, phoneNumber, position, salary);
     }
 
     public String getFirstName() {
@@ -94,4 +108,19 @@ public class Employee {
     public Date convertToDat(LocalDate dateToConvert) {
         return java.sql.Date.valueOf(dateToConvert);
     }
+
+
+    @Override
+    public int compareTo(Employee o) {
+
+        if (this.getSalary() == o.getSalary()) {
+            return 0;
+        } else if (this.getSalary() < o.getSalary()) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+
+
 }

@@ -60,9 +60,13 @@ public class Branch extends Organization{
     }
 
     public void sortByName(){
-        employeeList.sort(new ComparatorEmpLastName());
+        employeeList.sort(new ComparatorEmpName());
     }
     public void sortByAge(){
         employeeList.sort(new ComparatorEmpAge());
+    }
+
+    public void sortBySalary(){
+        employeeList.sort(new ComparatorEmpSalary());
     }
 }

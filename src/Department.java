@@ -50,7 +50,7 @@ public class Department extends Branch{
     }
 
     public void sortByName(){
-        employees.sort(new ComparatorEmpLastName());
+        employees.sort(new ComparatorEmpName());
     }
     public void sortByAge(){
         employees.sort(new ComparatorEmpAge());
