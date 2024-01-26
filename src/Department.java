@@ -56,6 +56,10 @@ public class Department extends Branch{
         employees.sort(new ComparatorEmpAge());
     }
 
+    public void sortBySalary(){
+        employees.sort(new ComparatorEmpSalary());
+    }
+
 
 
 
